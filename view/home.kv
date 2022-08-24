@@ -1,0 +1,79 @@
+<TooltipIconButton@MDIconButton+MDTooltip>
+<HomeApp>:
+    Screen:
+        name: "sc1"
+        size_hint: None, None
+        size: root.width, root.height
+
+        MDScreen:
+            size_hint: None, None
+            size: root.width, root.height
+            pos_hint: {"center_x": .5, "center_y": .5}
+            md_bg_color: 135/255, 206/255, 235/255, 1
+
+            MDFloatLayout:
+                size_hint: None, None
+                size: root.width , root.height - 500
+                md_bg_color: 135/255, 206/255, 235/255, 1
+                pos_hint: {"center_x": .5, "center_y": .95}
+
+                Image:
+                    size_hint: None, None
+                    size: dp(100), dp(100)
+                    pos_hint: {"center_x": .5, "center_y": .4}
+                    source: root.data_logo
+
+
+
+
+            MDFloatLayout:
+                size_hint: None, None
+                size: root.width - 100, root.height - 200
+                pos_hint: {"center_x": .5, "center_y": .55}
+                md_bg_color: 1, 1, 1, 1
+                Image:
+                    size_hint: None, None
+                    pos_hint: {"center_x": .5, "center_y": .5}
+                    source: root.data_logo
+                    size: root.width - 100, root.height - 200
+
+
+                MDFloatLayout:
+                    name: "screen_camera"
+                    id: id_screen_camera
+                    size_hint: None, None
+                    size: 1, 1
+                    opacity: 0
+
+                    MDScreen:
+
+                        MDBoxLayout:
+                            id: id_boxlayout_camera1
+                            opacity: 1
+                            pos_hint: {"center_x": .5, "center_y": .5}
+                            size_hint: None, None
+                            size: root.width - 100, root.height - 200
+
+
+
+
+            MDFloatLayout:
+                size_hint: None, None
+                size: root.width, root.height - 500
+                pos_hint: {"center_x": .5, "center_y": .1}
+                md_bg_color: 135/255, 206/255, 235/255, 1
+
+
+
+                TooltipIconButton:
+                    id: id_tap_button
+                    icon: "yeast"
+                    pos_hint: {"center_x": .5, "center_y": .65}
+                    on_release: root.scan()
+                    tooltip_text: "ouverture de la caméra"
+
+
+
+
+
+
